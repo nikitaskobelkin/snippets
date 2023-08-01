@@ -7,8 +7,14 @@ final class StorageManagerTests: XCTestCase {
     private var manager: StorageManagerProtocol!
 
     override func setUp() {
+        super.setUp()
         let mockService = DatabaseService(FakeDatabaseStack().persistentContainer)
         manager = StorageManager(databaseService: mockService)
+    }
+
+    override func tearDown() {
+        manager = nil
+        super.tearDown()
     }
 
     // MARK: - Add and fetch data
