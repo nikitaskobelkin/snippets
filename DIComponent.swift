@@ -14,7 +14,7 @@ final class SpaceXComponent: Component<SpaceXDependency>, ViewBuildProtocol {
         SpaceXViewModel(dataManager: dependency.dataManager)
     }
 
-    @ViewBuilder func buildView() -> some View {
+    @ViewBuilder var view: some View {
         SpaceXView(
             viewModel,
             launchComponent: LaunchComponent(parent: self)
